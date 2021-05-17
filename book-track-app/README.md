@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Detalii implementare:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- am destructurat aplicatia in folderele "board, components, styles, utils"
+  1. board ar trebui sa trimita spre componentele functionale ale aplicatie, spre exemplu Navigation, CardsList, LinesList, si reprezinta o viziune functionala/o zona din aplicatie
+  2. components este folderul care contine componentele generice folosite la construirea diferitelor parti ale aplicatiei(Button, Card, LoadingSpinner, Modal etc)
+  3. styles este folderul menit sa tina optiunile generice sau valabile in toata aplicatia de css : mixins, variabile globale, teme etc
+  4. utils este folderul menit sa tina functiile utilitare folosite la nivel global; aici vom intalni printre altele functii utilitare de merge-ui clase, extrase elemente din array dupa o anumita cheie, dar si api-urile cu call-urile de axios
 
-## Available Scripts
+- fiecare folder este compus din clasa de js, clasa de scss, si index.js. Aceasta partajare creaza o usurinta de a gasi eventualele erori(apare o problema de css pe componenta de Card, prezumtia e ca vei gasi solutia in Card.scss)
+- pentru css am optat pentru BEM notations, care elimina riscul aparitiei claselor css generice care ajung in conflict
+- am optat pentru creare de componente custom vs a folosi components libraries, din doua motive :
+    1. componentele create pot fi customizate in functie de nevoi, neavand limitari
+    2. pt o aplicatie de dimensiunile cerute, componentele importate ar aduce un overhead nenecesar in termeni de functionalitate expusa
+- s-au folosit React Hooks
+- implementat PropTypes pt type checking
+- adaugat spinner cu animatie pt call-ul initial
+- implementat animatii&tranzitii pentru un UX imbunatatit
 
-In the project directory, you can run:
+Further improvements:
+- adaugarea unui state management: Context API sau Redux(as recomanda probabil Context API, intrucat aplicatia are doar un numar limitat de adancime pe tree-ul de componente)
+- imbunatatirea genericitatii componentelor, ca sa suporte mai multe proprietati de personalizare
+- implementarea de teste
+- imbunatatiri pe partea de responsiveness, si implementarea de media-queries care sa randeze clase diferite in functie de dimensiunea ecranului, aplicatia putand fi dusa pana la nivel de mobile
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Pentru rulare aplicatie:
+ - npm install
+ - npm run start
+ 
+ Am atasat si un numar de screenshot-uri ale aplicatiei, intr-un folder 'screenshots' atasat
